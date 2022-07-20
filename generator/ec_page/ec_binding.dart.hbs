@@ -1,0 +1,10 @@
+import 'package:get/get.dart';
+import '../controller/{{snakeCase pageName}}_controller.dart';
+
+class {{ properCase pageName }}Binding extends Bindings {
+  @override
+  void dependencies() {
+    // TODO: implement dependencies
+    Get.put({{ properCase pageName }}Controller());
+  }
+}

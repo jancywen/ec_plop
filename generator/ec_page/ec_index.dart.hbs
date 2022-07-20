@@ -1,0 +1,9 @@
+
+export 'controller/{{snakeCase pageName}}_controller.dart';
+
+export 'page/{{snakeCase pageName}}_page.dart';
+
+{{#if hasBinding}}
+export 'binding/{{snakeCase pageName}}_binding.dart';
+{{/if}}
+
