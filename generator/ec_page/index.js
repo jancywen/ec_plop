@@ -1,5 +1,4 @@
 
-
 const componentExist = require('../utils/index.js');
 
 module.exports = {
@@ -45,7 +44,7 @@ module.exports = {
         path: `${tempPath}/index.dart`,
         templateFile: 'generator/ec_page/ec_index.dart.hbs'
       })
-    if (hasBinding) { // 创建scss
+    if (hasBinding) { 
       actions.push({
         type:'add',
         path: `${tempPath}/binding/{{ snakeCase pageName }}_binding.dart`,
