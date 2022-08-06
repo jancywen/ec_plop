@@ -9,7 +9,7 @@ module.exports = {
     {
       type: 'input',
       name: 'pageName',
-      message: '请输入page名称!',
+      message: '请输入page名称!!!',
       validate: value => {
         if ((/.+/).test(value)) {
           return componentExist(value) ? ' page名已经存在' : true
@@ -21,35 +21,58 @@ module.exports = {
       type: 'confirm',
       name: 'hasBinding',
       default: true,
-      message: '是否创建 binding 文件?'
+      message: '是否创建 binding 文件？'
+    },
+    {
+      type: 'confirm',
+      name: 'addRoutes',
+      default: true,
+      message: '是否添加路由？'
     },
   ],
   actions: (data) => {
-    const { hasBinding} = data;
+    const { hasBinding, addRoutes} = data;
     const actions =[];
     let tempPath = './src/ec_page/{{ snakeCase pageName }}';
 
-      actions.push({
-        type:'add',
-        path: `${tempPath}/page/{{ snakeCase pageName }}_page.dart`,
-        templateFile: 'generator/ec_page/ec_page.dart.hbs'
-      })
+    actions.push({
+      type:'add',
+      path: `${tempPath}/page/{{ snakeCase pageName }}_page.dart`,
+      templateFile: 'generator/ec_page/ec_page.dart.hbs'
+    })
     
-      actions.push({
-        type:'add',
-        path: `${tempPath}/controller/{{ snakeCase pageName }}_controller.dart`,
-        templateFile: 'generator/ec_page/ec_controller.dart.hbs'
-      })
-      actions.push({
-        type:'add',
-        path: `${tempPath}/index.dart`,
-        templateFile: 'generator/ec_page/ec_index.dart.hbs'
-      })
-    if (hasBinding) { // 创建scss
+    actions.push({
+      type:'add',
+      path: `${tempPath}/controller/{{ snakeCase pageName }}_controller.dart`,
+      templateFile: 'generator/ec_page/ec_controller.dart.hbs'
+    })
+    actions.push({
+      type:'add',
+      path: `${tempPath}/index.dart`,
+      templateFile: 'generator/ec_page/ec_index.dart.hbs'
+    })
+
+    if (hasBinding) {
       actions.push({
         type:'add',
         path: `${tempPath}/binding/{{ snakeCase pageName }}_binding.dart`,
         templateFile: 'generator/ec_page/ec_binding.dart.hbs'
+      })
+    }
+    
+    // router.dart文件 增加路由
+    if (addRoutes) {
+      actions.push({
+        type: 'append',
+        pattern: /(?=(\nclass))/,
+        path: './src/router/router.dart',
+        template: "import '../ec_page/{{ snakeCase pageName }}/index.dart';\n"
+      })
+      actions.push({
+        type: 'append',
+        pattern: /(?=(\]))/,
+        path: './src/router/router.dart',
+        templateFile: 'generator/ec_page/ec_router.hbs' 
       })
     }
     

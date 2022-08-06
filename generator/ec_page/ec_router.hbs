@@ -1,0 +1,7 @@
+    GetPage(
+        name: '/{{camelCase pageName}}',
+        page: () => const {{ properCase pageName }}Page(),
+        {{#if hasBinding}}
+        binding: {{ properCase pageName }}Binding()
+        {{/if}}
+    ),

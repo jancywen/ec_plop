@@ -24,12 +24,15 @@ npm install --save-dev plop
 
 ```
 ec_plop % plop ec_page
-? 请输入page名称! product_detail
-? 是否创建 binding 文件? Yes
-✔  ++ /src/ec_page/product_detail/page/product_detail_page.dart
-✔  ++ /src/ec_page/product_detail/controller/product_detail_controller.dart
-✔  ++ /src/ec_page/product_detail/index.dart
-✔  ++ /src/ec_page/product_detail/binding/product_detail_binding.dart
+? 请输入page名称!!! rabbit
+? 是否创建 binding 文件？ Yes
+? 是否添加路由？ Yes
+✔  ++ /src/ec_page/rabbit/page/rabbit_page.dart
+✔  ++ /src/ec_page/rabbit/controller/rabbit_controller.dart
+✔  ++ /src/ec_page/rabbit/index.dart
+✔  ++ /src/ec_page/rabbit/binding/rabbit_binding.dart
+✔  _+ /src/router/router.dart
+✔  _+ /src/router/router.dart
 ```
 
 参考： 

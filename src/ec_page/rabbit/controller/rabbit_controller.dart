@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:ec_ui/ec_ui.dart';
 
-class ShopSettingController extends PageStateController {
+class RabbitController extends PageStateController {
 
   @override
   void onInit() {

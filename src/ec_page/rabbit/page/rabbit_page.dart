@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ec_ui/ec_ui.dart';
-import '../controller/product_detail_controller.dart';
+import '../controller/rabbit_controller.dart';
 
 
-class ProductDetailPage extends GetView<ProductDetailController> {
-  const ProductDetailPage({Key? key}) : super(key: key);
+class RabbitPage extends GetView<RabbitController> {
+  const RabbitPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
