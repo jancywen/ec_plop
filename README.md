@@ -21,16 +21,20 @@ npm install --save-dev plop
 ```
 
 ## 应用
+1. 将 `generator`、 `plopfile.js` 复制到你的工程中，确保在同一级目录下
+2. 修改 `generator` -> `index.js` 中 `tempPath`、`routerPath` 路径
 
 ```
 ec_plop % plop ec_page
-? 请输入page名称!!! rabbit
+? 请输入模块名称!!! shop
+? 请输入page名称!!! product
 ? 是否创建 binding 文件？ Yes
 ? 是否添加路由？ Yes
-✔  ++ /src/ec_page/rabbit/page/rabbit_page.dart
-✔  ++ /src/ec_page/rabbit/controller/rabbit_controller.dart
-✔  ++ /src/ec_page/rabbit/index.dart
-✔  ++ /src/ec_page/rabbit/binding/rabbit_binding.dart
+? 是否分文件夹创建？ Yes
+✔  ++ /src/ec_page/product/page/product_page.dart
+✔  ++ /src/ec_page/product/controller/product_controller.dart
+✔  ++ /src/ec_page/product/index.dart
+✔  ++ /src/ec_page/product/binding/product_binding.dart
 ✔  _+ /src/router/router.dart
 ✔  _+ /src/router/router.dart
 ```

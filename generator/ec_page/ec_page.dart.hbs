@@ -2,15 +2,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ec_ui/ec_ui.dart';
+{{#if useFolder}}
 import '../controller/{{snakeCase pageName}}_controller.dart';
-
+{{else}}
+import '{{snakeCase pageName}}_controller.dart';
+{{/if}}
 
 class {{ properCase pageName }}Page extends GetView<{{ properCase pageName }}Controller> {
   const {{ properCase pageName }}Page({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    {{#if hasBinding}}
+    {{else}}
+    Get.put({{ properCase pageName }}Controller());
+    {{/if}}
+    
     return CommonScaffold(
         appTitle: '店铺管理',
         leading: Container(),

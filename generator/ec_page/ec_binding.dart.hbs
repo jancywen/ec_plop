@@ -1,10 +1,13 @@
 import 'package:get/get.dart';
+{{#if useFolder }}
 import '../controller/{{snakeCase pageName}}_controller.dart';
+{{else}}
+import '{{snakeCase pageName}}_controller.dart';
+{{/if}}
 
 class {{ properCase pageName }}Binding extends Bindings {
   @override
   void dependencies() {
-    // TODO: implement dependencies
     Get.put({{ properCase pageName }}Controller());
   }
 }

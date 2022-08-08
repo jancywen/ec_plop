@@ -1,4 +1,4 @@
-
+{{#if useFolder}}
 export 'controller/{{snakeCase pageName}}_controller.dart';
 
 export 'page/{{snakeCase pageName}}_page.dart';
@@ -7,3 +7,13 @@ export 'page/{{snakeCase pageName}}_page.dart';
 export 'binding/{{snakeCase pageName}}_binding.dart';
 {{/if}}
 
+{{else}} 
+export '{{snakeCase pageName}}_controller.dart';
+
+export '{{snakeCase pageName}}_page.dart';
+
+{{#if hasBinding}}
+export '{{snakeCase pageName}}_binding.dart';
+{{/if}}
+
+{{/if}}

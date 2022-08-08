@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:ec_ui/ec_ui.dart';
 
-class {{ properCase pageName }}Controller extends PageStateController {
+class ProductController extends PageStateController {
 
   @override
   void onInit() {
