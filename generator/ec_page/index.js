@@ -22,6 +22,11 @@ module.exports = {
       }
     },
     {
+      type: 'input',
+      name: 'pageDesc',
+      message: '请输入page描述!!!',
+    },
+    {
       type: 'confirm',
       name: 'hasBinding',
       default: true,
@@ -41,7 +46,7 @@ module.exports = {
     },
   ],
   actions: (data) => {
-    const { hasBinding, addRoutes, useFolder} = data;
+    const { hasBinding, addRoutes, useFolder, pageDesc} = data;
     const actions =[];
     // 路径
     let tempPath = './src/ec_page/{{ snakeCase pageName }}';
@@ -79,6 +84,12 @@ module.exports = {
         pattern: /(?=(\nclass))/,
         path: routerPath,
         template: "import '../ec_page/{{ snakeCase pageName }}/index.dart';\n"
+      })
+      actions.push({
+        type: 'append',
+        pattern: /(?=(\n\n  static))/,
+        path: routerPath,
+        template: "  \/\/\/ {{ pageDesc }}\n  static const String {{ snakeCase pageName }} = '\/{{camelCase moduleName}}{{properCase pageName}}';\n"
       })
       actions.push({
         type: 'append',

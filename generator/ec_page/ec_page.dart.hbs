@@ -1,3 +1,6 @@
+///
+/// {{ pageDesc }}
+///
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +22,7 @@ class {{ properCase pageName }}Page extends GetView<{{ properCase pageName }}Con
     {{/if}}
     
     return CommonScaffold(
-        appTitle: '店铺管理',
+        appTitle: '{{ pageDesc }}',
         leading: Container(),
         bodyWidget: emptyBuild(
             controller.emptyController,

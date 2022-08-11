@@ -1,5 +1,5 @@
     GetPage(
-        name: '/{{camelCase moduleName}}{{properCase pageName}}',
+        name: {{camelCase pageName}},
         page: () => const {{ properCase pageName }}Page(),
         {{#if hasBinding}}
         binding: {{ properCase pageName }}Binding()
