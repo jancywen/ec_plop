@@ -23,6 +23,11 @@ npm install --save-dev plop
 ## 应用
 1. 将 `generator`、 `plopfile.js` 复制到你的工程中，确保在同一级目录下
 2. 修改 `generator` -> `index.js` 中 `tempPath`、`routerPath` 路径
+3. 添加 gitignore
+```
+generator/
+plopfile.js
+```
 
 ```
 ec_plop % plop ec_page
@@ -39,6 +44,7 @@ ec_plop % plop ec_page
 ✔  _+ /lib/router/router.dart
 ✔  _+ /lib/router/router.dart
 ✔  _+ /lib/router/router.dart```
+```
 
 router.dart 代码
 ```
