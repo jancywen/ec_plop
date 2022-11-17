@@ -31,9 +31,9 @@ dependencies:
     sdk: flutter
 
   get:
-  ec_ui:
-    git:
-      url: git@git.epochn.com:ECPubs/ec_ui.git
+  kmax_ui:
+    path: ../kmax_ui
+    
 
   cupertino_icons: ^1.0.2
 

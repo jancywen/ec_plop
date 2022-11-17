@@ -1,20 +1,20 @@
 ///
-/// 地址管理
+/// 主登录页
 ///
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ec_ui/ec_ui.dart';
-import '../controller/address_controller.dart';
+import 'package:kmax_ui/kmax_ui.dart';
+import 'main_login_controller.dart';
 
-class AddressPage extends GetView<AddressController> {
-  const AddressPage({Key? key}) : super(key: key);
+class MainLoginPage extends GetView<MainLoginController> {
+  const MainLoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     
     return CommonScaffold(
-        appTitle: '地址管理',
+        appTitle: '主登录页',
         leading: Container(),
         bodyWidget: emptyBuild(
             controller.emptyController,

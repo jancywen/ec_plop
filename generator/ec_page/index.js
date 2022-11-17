@@ -41,7 +41,7 @@ module.exports = {
     {
       type: 'confirm',
       name: 'useFolder',
-      default: true,
+      default: false,
       message: '是否分文件夹创建？'
     },
   ],
@@ -49,8 +49,8 @@ module.exports = {
     const { hasBinding, addRoutes, useFolder, pageDesc} = data;
     const actions =[];
     // 路径
-    let tempPath = './src/ec_page/{{ snakeCase pageName }}';
-    let routerPath = './src/router/router.dart';
+    let tempPath = './lib/page/{{ snakeCase pageName }}';
+    let routerPath = './lib/router/router.dart';
 
     actions.push({
       type:'add',
@@ -89,7 +89,7 @@ module.exports = {
         type: 'append',
         pattern: /(?=(\n\n  static))/,
         path: routerPath,
-        template: "  \/\/\/ {{ pageDesc }}\n  static const String {{ snakeCase pageName }} = '\/{{camelCase moduleName}}{{properCase pageName}}';\n"
+        template: "  \/\/\/ {{ pageDesc }}\n  static const String {{ camelCase pageName }} = '\/{{camelCase moduleName}}{{properCase pageName}}';\n"
       })
       actions.push({
         type: 'append',

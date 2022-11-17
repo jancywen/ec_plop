@@ -26,49 +26,38 @@ npm install --save-dev plop
 
 ```
 ec_plop % plop ec_page
-? 请输入模块名称!!! shop
-? 请输入page名称!!! address
-? 请输入page描述!!! 地址管理
+? 请输入模块名称!!! login
+? 请输入page名称!!! mainLogin
+? 请输入page描述!!! 主登录页
 ? 是否创建 binding 文件？ Yes
 ? 是否添加路由？ Yes
-? 是否分文件夹创建？ Yes
-✔  ++ /src/ec_page/address/page/address_page.dart
-✔  ++ /src/ec_page/address/controller/address_controller.dart
-✔  ++ /src/ec_page/address/index.dart
-✔  ++ /src/ec_page/address/binding/address_binding.dart
-✔  _+ /src/router/router.dart
-✔  _+ /src/router/router.dart
-✔  _+ /src/router/router.dart
-```
+? 是否分文件夹创建？ No
+✔  ++ /lib/page/main_login/main_login_page.dart
+✔  ++ /lib/page/main_login/main_login_controller.dart
+✔  ++ /lib/page/main_login/index.dart
+✔  ++ /lib/page/main_login/main_login_binding.dart
+✔  _+ /lib/router/router.dart
+✔  _+ /lib/router/router.dart
+✔  _+ /lib/router/router.dart```
 
 router.dart 代码
 ```
 import 'package:get/get.dart';
 
-import '../ec_page/home/index.dart';
-
-import '../ec_page/address/index.dart';
+import '../ec_page/main_login/index.dart';
 
 class Router {
   // 常量  插入识别'\n\n  static'
-  /// 首页
-  static const String home = '/shopHome';
 
-  /// 地址管理
-  static const String address = '/shopAddress';
+  /// 主登录页
+  static const String mainLogin = '/loginMainLogin';
 
 
   static List<GetPage> routers = [
     GetPage(
-        name: home,
-        page: () => const HomePage(),
-        binding: HomeBinding()
-    ),
-
-    GetPage(
-        name: address,
-        page: () => const AddressPage(),
-        binding: AddressBinding()
+        name: mainLogin,
+        page: () => const MainLoginPage(),
+        binding: MainLoginBinding()
     ),
 ];
 }

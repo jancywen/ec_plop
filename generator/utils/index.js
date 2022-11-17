@@ -7,7 +7,7 @@
 
 const fs = require('fs')
 const path = require('path')
-const pageComponents = fs.readdirSync(path.join(__dirname, '../../src/ec_page'))
+const pageComponents = fs.readdirSync(path.join(__dirname, '../../lib/page'))
 
 const componentExist = comp => {
   return [...pageComponents].indexOf(comp) > -1

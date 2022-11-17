@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:ec_ui/ec_ui.dart';
+import 'package:kmax_ui/kmax_ui.dart';
 
-class AddressController extends PageStateController {
+class MainLoginController extends PageStateController {
 
   @override
   void onInit() {
