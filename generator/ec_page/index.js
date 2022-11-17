@@ -83,7 +83,7 @@ module.exports = {
         type: 'append',
         pattern: /(?=(\nclass))/,
         path: routerPath,
-        template: "import '../ec_page/{{ snakeCase pageName }}/index.dart';\n"
+        template: "import '../page/{{ snakeCase pageName }}/index.dart';\n"
       })
       actions.push({
         type: 'append',
