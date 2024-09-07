@@ -73,3 +73,5 @@ class Router {
 [前端工程化之plop的使用](https://blog.csdn.net/u012733501/article/details/106858603)
 
 [前端神器Plop-自动生成模版](https://juejin.cn/post/6854573217446084616)
+
+[命令](https://github.com/SBoudrias/Inquirer.js#inquirerregisterpromptname-prompt)
